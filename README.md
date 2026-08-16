@@ -1,42 +1,36 @@
-# Scoop Bucket Template
+# scoop-lightee
 
-<!-- Uncomment the following line after replacing placeholders -->
-<!-- [![Tests](https://github.com/<username>/<bucketname>/actions/workflows/ci.yml/badge.svg)](https://github.com/<username>/<bucketname>/actions/workflows/ci.yml) [![Excavator](https://github.com/<username>/<bucketname>/actions/workflows/excavator.yml/badge.svg)](https://github.com/<username>/<bucketname>/actions/workflows/excavator.yml) -->
+[![Tests](https://github.com/hirovel/scoop-lightee/actions/workflows/ci.yml/badge.svg)](https://github.com/hirovel/scoop-lightee/actions/workflows/ci.yml) [![Excavator](https://github.com/hirovel/scoop-lightee/actions/workflows/excavator.yml/badge.svg)](https://github.com/hirovel/scoop-lightee/actions/workflows/excavator.yml)
 
-Template bucket for [Scoop](https://scoop.sh), the Windows command-line installer.
+[Lightee（轻小译）](https://github.com/hirovel/lightee-translator) 的 [Scoop](https://scoop.sh) bucket。
 
-## How do I use this template?
-
-1. Generate your own copy of this repository with the "Use this template"
-   button.
-2. Allow all GitHub Actions:
-   - Navigate to `Settings` - `Actions` - `General` - `Actions permissions`.
-   - Select `Allow all actions and reusable workflows`.
-   - Then `Save`.
-3. Allow writing to the repository from within GitHub Actions:
-   - Navigate to `Settings` - `Actions` - `General` - `Workflow permissions`.
-   - Select `Read and write permissions`.
-   - Then `Save`.
-4. Document the bucket in `README.md`.
-5. Replace the placeholder repository string in `bin/auto-pr.ps1`.
-6. Create new manifests by copying `bucket/app-name.json.template` to
-   `bucket/<app-name>.json`.
-7. Commit and push changes.
-8. If you'd like your bucket to be indexed on `https://scoop.sh`, add the
-   topic `scoop-bucket` to your repository.
-
-## How do I install these manifests?
-
-After manifests have been committed and pushed, run the following:
+## 安装
 
 ```pwsh
-scoop bucket add <bucketname> https://github.com/<username>/<bucketname>
-scoop install <bucketname>/<manifestname>
+scoop bucket add lightee https://github.com/hirovel/scoop-lightee
+scoop install lightee
 ```
 
-## How do I contribute new manifests?
+升级 `scoop update lightee`，卸载 `scoop uninstall lightee`。
 
-To make a new manifest contribution, please read the [Contributing
-Guide](https://github.com/ScoopInstaller/.github/blob/main/.github/CONTRIBUTING.md)
-and [App Manifests](https://github.com/ScoopInstaller/Scoop/wiki/App-Manifests)
-wiki page.
+## 还没有 Scoop？
+
+在 PowerShell 里执行，不需要管理员权限：
+
+```pwsh
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+```
+
+装好后回到上面一步。
+
+## 说明
+
+- 需要 Windows 10 / 11 64 位。
+- 翻译需要 AI 服务商的 API Key，在应用设置里填写。Key 经 Windows DPAPI 加密后存在本机。
+- 用户数据在 `~/.lightee`，`scoop uninstall` 不会删除它。
+- 这个渠道装的版本由 `scoop update` 管理，应用不会自行更新。
+
+## 反馈
+
+应用本身的问题请提到[主仓库](https://github.com/hirovel/lightee-translator/issues)；只有这个 bucket 的清单问题（下载地址、校验和）提到本仓库。
