@@ -11,7 +11,7 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/hirovel/lightee-translator/releases/download/v0.10.0/Lightee-0.10.0-win-x64.zip",
-            "hash": "68eea7df74156b40703f0c39a9b5437909d9a8c4a7f0b98e5d10a711c42667a0"
+            "hash": "84679b760eef34a1c5bf09bd250380e779724520c1a436f8fb94902da317956e"
         }
     },
     "bin": "Lightee.exe",
