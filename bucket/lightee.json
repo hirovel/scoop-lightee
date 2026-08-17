@@ -6,12 +6,12 @@
     "notes": [
         "翻译需要 AI 服务商的 API Key，在应用设置里填写。",
         "Key 经 Windows DPAPI 加密后存在本机，不会明文落盘。",
-        "用户数据在 ~/.lightee，scoop uninstall 不会删除它。"
+        "用户数据在 %APPDATA%\\Lightee，scoop uninstall 不会删除它。"
     ],
     "architecture": {
         "64bit": {
             "url": "https://github.com/hirovel/lightee-translator/releases/download/v0.10.0/Lightee-0.10.0-win-x64.zip",
-            "hash": "84679b760eef34a1c5bf09bd250380e779724520c1a436f8fb94902da317956e"
+            "hash": "b919ba5b8fe279ab0cda310f94765531807128ef2279e69d71029c86b7885cb0"
         }
     },
     "bin": "Lightee.exe",
